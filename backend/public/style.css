@@ -1,0 +1,414 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #222;
+}
+
+
+h1{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img{
+    width: 300px;
+
+    box-shadow: 5px -5px 10px rgba(0,0,0,0.08);
+}
+/* App wrapper */
+.app {
+  max-width: 900px;
+  margin: auto;
+  padding: 16px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+header p {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Search card */
+.search-card {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid #e3e8ef;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.search-card select,
+.search-card input {
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #cfd8e3;
+  background: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.search-card select:focus,
+.search-card input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+}
+
+/* .search-card button {
+  padding: 12px;
+  font-size: 1rem;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+} */
+
+/* .search-card button:active {
+  transform: scale(0.98);
+} */
+.search-card button {
+  padding: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: linear-gradient(180deg, #1a73e8, #1558c0);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(26,115,232,0.35);
+}
+
+.search-card button:hover {
+  filter: brightness(1.05);
+}
+
+.search-card button:active {
+  transform: scale(0.98);
+}
+
+
+/* Results */
+.results {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5eaf0;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+thead {
+  background: linear-gradient(180deg, #f5f7fa, #eef2f6);
+}
+
+th {
+  font-weight: 700;
+  color: #2b2f36;
+  font-size: 0.85rem;
+  letter-spacing: 0.4px;
+}
+
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.9rem;
+}
+
+/* th {
+  font-weight: 600;
+} */
+
+/* Telugu styling */
+.te {
+  display: block;
+  margin-top: 3px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0a7d37; /* deep green = trust */
+  letter-spacing: 0.3px;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .search-card {
+    padding: 14px;
+  }
+
+  th, td {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+/* MOBILE CARDS */
+.mobile-cards {
+  display: none;
+}
+
+/* CARD */
+.voter-card {
+  background: #fff;
+  margin-bottom: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-size: 0.95rem;
+}
+
+.voter-row {
+  margin-bottom: 6px;
+}
+
+.voter-label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.voter-value {
+  font-size: 1rem;
+}
+
+/* TELUGU */
+.voter-te {
+  color: #0a7d37;
+  font-size: 1.15rem;
+  font-weight: bolder;
+}
+
+/* SWITCH LOGIC */
+@media (max-width: 768px) {
+  table {
+    display: none;
+  }
+
+  .mobile-cards {
+    display: block;
+  }
+}
+
+.count-box {
+  margin: 14px 0;
+  padding: 10px 14px;
+  background: #f1f5fb;
+  border-left: 4px solid #1a73e8;
+  border-radius: 8px;
+  font-weight: 700;
+  color: #1f2933;
+}
+
+
+@media (max-width: 768px) {
+  .count-box {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/*  */
+.name-te{
+  color: #1558c0;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.house-mobile{
+  color: #1558c0;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+
+
+
+
+/* OWNER HERO SECTION */
+.owner-text {
+  background: linear-gradient(180deg, #ffffff, #f6f8fb);
+  border: 2px solid #1a73e8;
+  border-radius: 22px;
+  padding: 10px 14px;
+  text-align: center;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(26,115,232,0.25);
+}
+
+.owner-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px 16px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  margin-bottom: 20px;
+}
+
+/* BIG IMAGE */
+.owner-hero-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  /* border-radius: 16px; */
+  border: 4px solid #1a73e8; /* authority blue */
+  border-radius: 30px;
+}
+
+/* TEXT */
+.owner-hero-text {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.owner-hero-name {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #222;
+}
+
+.owner-hero-title {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 600;
+}
+
+
+@media (max-width: 600px) {
+  .owner-hero-img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .owner-hero-name {
+    font-size: 1.4rem;
+  }
+
+  .owner-hero-title {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+/* VOTE STATUS SELECT */
+.vote-select {
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 2px solid #ccc;
+}
+
+.vote-select.our {
+  background: #e6f4ea;
+  border-color: #0a7d37;
+  color: #0a7d37;
+}
+
+.vote-select.opp {
+  background: #fdecea;
+  border-color: #c62828;
+  color: #c62828;
+}
+
+.vote-select.undecided {
+  background: #fffbe6;
+  border-color: #f9a825;
+  color: #f9a825;
+}
+
+
+
+
+
+
+
+.support-summary {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.support-summary .stat {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.support-summary .label {
+  display: block;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.support-summary .value {
+  display: block;
+  font-size: 28px;
+  margin-top: 4px;
+}
+
+.stat.our {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+.stat.opp {
+  background: #fdecea;
+  color: #a50e0e;
+}
+
+.stat.undecided {
+  background: #f1f3f4;
+  color: #444;
+}
