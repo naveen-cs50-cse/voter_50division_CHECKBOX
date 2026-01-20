@@ -102,8 +102,8 @@ function renderAll(voters) {
 
     >
       <option value="undecided" ${v.vote_status === "undecided" ? "selected" : ""}>Undecided</option>
-      <option value="our" ${v.vote_status === "our" ? "selected" : ""}>Our</option>
-      <option value="opp" ${v.vote_status === "opp" ? "selected" : ""}>Opp</option>
+      <option value="our" ${v.vote_status === "our" ? "selected" : ""}>Our✅</option>
+      <option value="opp" ${v.vote_status === "opp" ? "selected" : ""}>Opp❌</option>
     </select>
   </td>
         `;
@@ -132,8 +132,8 @@ function renderAll(voters) {
     onchange="updateVoteStatus('${v.epic}', this.value.toUpperCase())"
   >
     <option value="undecided" ${v.vote_status === "undecided" ? "selected" : ""}>Undecided</option>
-    <option value="our" ${v.vote_status === "our" ? "selected" : ""}>Our</option>
-    <option value="opp" ${v.vote_status === "opp" ? "selected" : ""}>Opp</option>
+    <option value="our" ${v.vote_status === "our" ? "selected" : ""}>Our✅</option>
+    <option value="opp" ${v.vote_status === "opp" ? "selected" : ""}>Opp❌</option>
   </select>
 </div>
 
@@ -199,6 +199,7 @@ async function loadSupportCounts() {
     console.error("Failed to load support counts", err);
   }
 }
+
 
 
 
